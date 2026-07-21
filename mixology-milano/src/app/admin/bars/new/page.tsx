@@ -19,7 +19,7 @@ const barSchema = z.object({
   website_url: z.string().url().optional().or(z.literal("")),
   instagram_url: z.string().url().optional().or(z.literal("")),
   phone: z.string().optional(),
-  coverPhoto: z.instanceof(FileList).optional(),
+  coverPhoto: z.custom<FileList>().optional(),
 });
 
 type BarFormValues = z.infer<typeof barSchema>;
