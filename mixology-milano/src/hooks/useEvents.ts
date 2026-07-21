@@ -2,7 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { createClient } from "@/lib/supabase/client";
-import type { Event, EventCalendarTab } from "@/types/database";
+import type { Event } from "@/types/database";
+import type { EventCalendarTab } from "@/lib/constants";
 import { startOfDay, endOfDay, addDays, endOfWeek } from "date-fns";
 
 const EVENT_SELECT = `
