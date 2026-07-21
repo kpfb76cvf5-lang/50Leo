@@ -157,7 +157,7 @@ export function BarDetailSheet({ bar, onClose }: BarDetailSheetProps) {
 
               <div className="grid grid-cols-2 gap-2 pt-2">
                 {bar.booking_url && (
-                  <Button variant="gold" className="col-span-2" asChild={false} onClick={() => window.open(bar.booking_url!, "_blank")}>
+                  <Button variant="gold" className="col-span-2" onClick={() => window.open(bar.booking_url!, "_blank")}>
                     {tr.book}
                   </Button>
                 )}
