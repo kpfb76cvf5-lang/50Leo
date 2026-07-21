@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line dark:border-line-dark;
+  }
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    overscroll-behavior-y: none;
+  }
+  ::selection {
+    @apply bg-gold/25;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-line dark:border-line-dark bg-transparent px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-gold;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Mapbox GL overrides — rimuove branding invasivo, adatta ai token del design system */
+.mapboxgl-ctrl-logo {
+  opacity: 0.5;
+}
+.mapboxgl-popup-content {
+  padding: 0 !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(10, 10, 11, 0.16) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
